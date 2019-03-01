@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 4 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>PocketProject - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>AddressBook Level 4 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>PocketProject - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
@@ -14,20 +14,21 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-an-employee-code-add-code">3.2. Adding an employee: <code>add</code></a></li>
-<li><a href="#listing-all-employees-code-list-code">3.3. Listing all employees : <code>list</code></a></li>
-<li><a href="#editing-an-employee-code-edit-code">3.4. Editing an employee : <code>edit</code></a></li>
-<li><a href="#locating-employees-by-name-code-find-code">3.5. Locating employees by name: <code>find</code></a></li>
-<li><a href="#deleting-an-employee-code-delete-code">3.6. Deleting an employee <code>delete</code></a></li>
-<li><a href="#selecting-an-employee-code-select-code">3.7. Selecting an employee : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.8. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.9. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.10. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.11. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.13. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#project-commands-code-coming-in-v2-0-code">3.15. Project commands <code>[coming in v2.0]</code></a></li>
+<li><a href="#adding-an-employee-or-project-to-the-application-code-add-code">3.2. Adding an employee or project to the application: <code>add</code></a></li>
+<li><a href="#delete-a-project-or-an-employee-from-the-application-code-delete-code">3.3. Delete a project or an employee from the application <code>delete</code></a></li>
+<li><a href="#listing-all-employees-or-projects-code-list-code">3.4. Listing all employees or projects : <code>list</code></a></li>
+<li><a href="#editing-an-employee-code-edit-code">3.5. Editing an employee : <code>edit</code></a></li>
+<li><a href="#locating-employees-projects-or-skills-by-name-code-find-code">3.6. Locating employees, projects or skills by name: <code>find</code></a></li>
+<li><a href="#view-the-details-of-employees-or-projects-or-milestones-code-view-code">3.7. View the details of employees or projects or milestones : <code>view</code></a></li>
+<li><a href="#add-an-employee-or-milestone-to-a-project-code-addto-code">3.8. Add an employee or milestone to a project : <code>addto</code></a></li>
+<li><a href="#remove-an-employee-or-milestone-from-a-project-code-removefrom-code">3.9. Remove an employee or milestone from a project : <code>removefrom</code></a></li>
+<li><a href="#to-indicate-the-project-has-been-completed-code-complete-code">3.10. To indicate the project has been completed : <code>complete</code></a></li>
+<li><a href="#sort-the-projects-by-name-or-deadline-code-sort-code">3.11. Sort the projects by name or deadline : <code>sort</code></a></li>
+<li><a href="#display-statistics-regarding-all-the-projects-code-stats-code">3.12. Display statistics regarding all the projects : <code>stats</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.13. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.14. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.15. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#project-commands-code-coming-in-v2-0-code">3.16. Project commands <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -39,7 +40,10 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>PocketProject is for managers who have difficulty managing numerous projects that they are working on as well as the many employees that are under their charge. This application helps to keep track of employees responsible for each component of the project and also the workload of each employee.Thus, making it easier for managers to allocate and assign roles as required for different projects as well as manage their employees better.</p>
+<p>PocketProject is for managers who have difficulty managing numerous projects that they are working on as well as the
+many employees that are under their charge. This application helps to keep track of employees responsible for each
+component of the project and also the workload of each employee.Thus, making it easier for managers to allocate and
+assign roles as required for different projects as well as manage their employees better.</p>
 </div>
 </div>
 </div>
@@ -74,13 +78,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong><code>list</code></strong> : lists all employees</p>
 </li>
 <li>
 <p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd employee shown in the current list</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -128,10 +132,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-employee-code-add-code"><a class="link" href="#adding-an-employee-code-add-code">3.2. Adding an employee: <code>add</code></a></h3>
+<h3 id="adding-an-employee-or-project-to-the-application-code-add-code"><a class="link" href="#adding-an-employee-or-project-to-the-application-code-add-code">3.2. Adding an employee or project to the application: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds an employee to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+<p>Adds an employee to the list of employees.<br>
+Format: <code>add employee n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [s/SKILL]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -140,7 +144,7 @@ Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;<
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-An employee can have any number of tags (including 0)
+An employee can have any number of skills (including 0).
 </td>
 </tr>
 </table>
@@ -151,26 +155,96 @@ An employee can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p><code>add employee n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p><code>add employee n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Adds a project to the list of projects.<br>
+Format: <code>add project n/NAME d/DEADLINE c/CLIENT_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add project n/Apollo d/12/12/2019 c/FairPrice</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-employees-code-list-code"><a class="link" href="#listing-all-employees-code-list-code">3.3. Listing all employees : <code>list</code></a></h3>
+<h3 id="delete-a-project-or-an-employee-from-the-application-code-delete-code"><a class="link" href="#delete-a-project-or-an-employee-from-the-application-code-delete-code">3.3. Delete a project or an employee from the application <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all employees in the employee list.<br>
-Format: <code>list</code></p>
+<p>Deletes the specified employee from the employee list.<br>
+Format: <code>delete employee INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the employee at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed employee list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd person in the employee list.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>delete 1</code><br>
+Deletes the 1st person in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Deletes the project from the list of projects.<br>
+Format: <code>delete project PROJECT_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>delete project Apollo</code><br>
+Deletes project "Apollo" from project list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-an-employee-code-edit-code"><a class="link" href="#editing-an-employee-code-edit-code">3.4. Editing an employee : <code>edit</code></a></h3>
+<h3 id="listing-all-employees-or-projects-code-list-code"><a class="link" href="#listing-all-employees-or-projects-code-list-code">3.4. Listing all employees or projects : <code>list</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all employees in the employee list.<br>
+Format: <code>list employees</code></p>
+</div>
+<div class="paragraph">
+<p>Shows a list of all projects in the project list.<br>
+Format: <code>list projects</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-an-employee-code-edit-code"><a class="link" href="#editing-an-employee-code-edit-code">3.5. Editing an employee : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing employee.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [s/SKILL]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -184,6 +258,12 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 </li>
 <li>
 <p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing skills, the existing skills of the person will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the person&#8217;s skills by typing <code>s/</code> without specifying any tags after it.</p>
 </li>
 <li>
 <p>When editing tags, the existing tags of the employee will be removed i.e adding of tags is not cumulative.</p>
@@ -202,6 +282,11 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <ul>
 <li>
 <p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
+Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+</li>
+<li>
+<p><code>edit 2 n/Betsy Crower s/</code><br>
+Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing skills.
 Edits the phone number and email address of the 1st employee to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
 </li>
 <li>
@@ -212,10 +297,10 @@ Edits the name of the 2nd employee to be <code>Betsy Crower</code> and clears al
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-employees-by-name-code-find-code"><a class="link" href="#locating-employees-by-name-code-find-code">3.5. Locating employees by name: <code>find</code></a></h3>
+<h3 id="locating-employees-projects-or-skills-by-name-code-find-code"><a class="link" href="#locating-employees-projects-or-skills-by-name-code-find-code">3.6. Locating employees, projects or skills by name: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Finds employees whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+Format: <code>find employee KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -246,8 +331,12 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
+<p><code>find employee John</code><br>
 Returns <code>john</code> and <code>John Doe</code></p>
+</li>
+<li>
+<p><code>find employee Betsy Tim John</code><br>
+Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
 </li>
 <li>
 <p><code>find Betsy Tim John</code><br>
@@ -255,52 +344,74 @@ Returns any employee having names <code>Betsy</code>, <code>Tim</code>, or <code
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="deleting-an-employee-code-delete-code"><a class="link" href="#deleting-an-employee-code-delete-code">3.6. Deleting an employee <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified employee from the address book.<br>
-Format: <code>delete INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the employee at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed employee list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
+<p>Finds projects whose names contain any of the given keywords.<br>
+Format: <code>find project KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
+<div class="paragraph">
+<p><code>find project Apollo</code><br>
+Returns a list of projects with names that contain Apollo</p>
+</div>
+<div class="paragraph">
+<p>Finds employees with the chosen skill.<br>
+Format: <code>find skill KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>find skill java</code><br>
+Returns a list of employees who has java skill.
+* <code>list</code><br>
 <code>delete 2</code><br>
-Deletes the 2nd employee in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
+Deletes the 2nd employee in the address book.
+* <code>find Betsy</code><br>
 <code>delete 1</code><br>
 Deletes the 1st employee in the results of the <code>find</code> command.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-an-employee-code-select-code"><a class="link" href="#selecting-an-employee-code-select-code">3.7. Selecting an employee : <code>select</code></a></h3>
+<h3 id="view-the-details-of-employees-or-projects-or-milestones-code-view-code"><a class="link" href="#view-the-details-of-employees-or-projects-or-milestones-code-view-code">3.7. View the details of employees or projects or milestones : <code>view</code></a></h3>
 <div class="paragraph">
-<p>Selects the employee identified by the index number used in the displayed employee list.<br>
+<p>Returns the list of milestones and employees in a project.<br>
+Format: <code>view project PROJECT_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>view project Apollo</code><br>
+Displays details of the project named “Apollo”</p>
+</div>
+<div class="paragraph">
+<p>Returns a view of details of the chosen employee.<br>
+Format: <code>view employee EMPLOYEE_INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>list employees</code><br>
+<code>view employee 3</code><br>
+Displays details of the employee at index 3</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-an-employee-or-milestone-to-a-project-code-addto-code"><a class="link" href="#add-an-employee-or-milestone-to-a-project-code-addto-code">3.8. Add an employee or milestone to a project : <code>addto</code></a></h3>
+<div class="paragraph">
+<p>Adds an employee to a project.<br>
+Format: <code>addto employee PROJECT_NAME EMPLOYEE_INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>addto employee Apollo John Doe</code><br>
+John Doe is added to Project Apollo.
+Selects the employee identified by the index number used in the displayed employee list.<br>
 Format: <code>select INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -337,134 +448,121 @@ Selects the 1st employee in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.8. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
-<p>Lists all the commands that you have entered in reverse chronological order.<br>
-Format: <code>history</code></p>
+<p><code>addto employee Starrer Vanessa Peterson</code><br>
+Vanessa Peterson is added to Project Starrer.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.9. Undoing previous command : <code>undo</code></a></h3>
-<div class="paragraph">
-<p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
-</div>
-</td>
-</tr>
-</table>
+<p>Adds a milestone to a project<br>
+Format: <code>addto milestone PROJECT_NAME MS_DETAILS MS_DATE</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code><br>
-<code>list</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>select 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
-</li>
-</ul>
+<div class="paragraph">
+<p><code>addto milestone Apollo “Completed UI for program” 23/11/2015</code><br>
+Milestone added to Project Apollo</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.10. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="remove-an-employee-or-milestone-from-a-project-code-removefrom-code"><a class="link" href="#remove-an-employee-or-milestone-from-a-project-code-removefrom-code">3.9. Remove an employee or milestone from a project : <code>removefrom</code></a></h3>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
+<p>Remove an employee from a project.<br>
+Format: <code>removefrom employee PROJECT_NAME EMPLOYEE_INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.11. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p><code>list employees</code><br>
+<code>removefrom employee Project Apollo 3</code><br>
+Removes the employee at index 3 from Project Apollo.</p>
+</div>
+<div class="paragraph">
+<p>Remove a milestone from a project.<br>
+Format: <code>removefrom milestone PROJECT_NAME MS_INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>view milestones Apollo</code><br>
+<code>removefrom milestone Apollo 1</code><br>
+Removes the milestone at index 1 from Project Apollo.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></h3>
+<h3 id="to-indicate-the-project-has-been-completed-code-complete-code"><a class="link" href="#to-indicate-the-project-has-been-completed-code-complete-code">3.10. To indicate the project has been completed : <code>complete</code></a></h3>
+<div class="paragraph">
+<p>Indicates that a project is completed.
+Format: <code>complete PROJ_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>complete Project Apollo</code><br>
+Project Apollo has been finished and delivered to client.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-the-projects-by-name-or-deadline-code-sort-code"><a class="link" href="#sort-the-projects-by-name-or-deadline-code-sort-code">3.11. Sort the projects by name or deadline : <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Returns a sorted list of projects by the sort key value.<br>
+Available keys: name, deadline<br>
+Name: returns list in lexicographical order<br>
+Deadline: returns list by earliest deadline first.<br>
+Format: <code>sort KEY_VALUE</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>sort name</code><br>
+Projects have been sorted by name.</p>
+</div>
+<div class="paragraph">
+<p><code>sort deadline</code><br>
+Projects have been sorted by impending deadline.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="display-statistics-regarding-all-the-projects-code-stats-code"><a class="link" href="#display-statistics-regarding-all-the-projects-code-stats-code">3.12. Display statistics regarding all the projects : <code>stats</code></a></h3>
+<div class="paragraph">
+<p>Returns the number of completed projects and number of currently ongoing projects.
+Format: <code>stats</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>stats</code><br>
+Total number of ongoing projects: 4<br>
+Total number of completed projects: 9</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.13. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.14. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.15. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="project-commands-code-coming-in-v2-0-code"><a class="link" href="#project-commands-code-coming-in-v2-0-code">3.15. Project commands <code>[coming in v2.0]</code></a></h3>
+<h3 id="project-commands-code-coming-in-v2-0-code"><a class="link" href="#project-commands-code-coming-in-v2-0-code">3.16. Project commands <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{Commands related to managing of project will be added soon.}</em></p>
 </div>
@@ -510,20 +608,7 @@ e.g. <code>find James Jake</code></p>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
 </li>
-<li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 2</code></p>
-</li>
-<li>
-<p><strong>History</strong> : <code>history</code></p>
-</li>
-<li>
-<p><strong>Undo</strong> : <code>undo</code></p>
-</li>
-<li>
-<p><strong>Redo</strong> : <code>redo</code></p>
-</li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-02-28 16:59:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-01 11:58:55 UTC</div></div></div></body></html>
