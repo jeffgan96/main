@@ -10,6 +10,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+
 
 <fx:root type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
          title="Address App" minWidth="450" minHeight="600" onCloseRequest="#handleExit">
@@ -47,14 +50,18 @@
         </StackPane>
 
         <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.4" VBox.vgrow="ALWAYS">
-          <VBox fx:id="employeeList" minWidth="340" prefWidth="340" SplitPane.resizableWithParent="false">
-            <padding>
-              <Insets top="10" right="10" bottom="10" left="10" />
-            </padding>
-            <StackPane fx:id="employeeListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-          </VBox>
-
-
+          <TabPane id = "tabPane" fx:id="tabPane" tabMinHeight="30.0" tabMinWidth="80.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+            <tabs>
+              <Tab closable="false" text="Employee">
+                <VBox fx:id="employeeList" minWidth="340" prefWidth="340" SplitPane.resizableWithParent="false">
+                  <padding>
+                    <Insets top="10" right="10" bottom="10" left="10" />
+                  </padding>
+                  <StackPane fx:id="employeeListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+                </VBox>
+              </Tab>
+            </tabs>
+          </TabPane>
 
           <StackPane fx:id="browserPlaceholder" prefWidth="340" >
             <padding>
@@ -70,8 +77,6 @@
           </VBox>
 
         </SplitPane>
-
-
 
         <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
       </VBox>
