@@ -15,7 +15,7 @@ import seedu.address.model.project.Project;
 public class ProjectListPanelHandle extends NodeHandle<ListView<Project>> {
     public static final String PROJECT_LIST_VIEW_ID = "#projectListView";
 
-    private static final String CARD_PANE_ID = "#cardPane";
+    private static final String CARD_PANE_ID = "#projectCardPane";
 
     private Optional<Project> lastRememberedSelectedProjectCard;
 

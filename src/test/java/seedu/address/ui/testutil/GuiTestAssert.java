@@ -83,4 +83,14 @@ public class GuiTestAssert {
         assertEquals(expectedProject.getClient().client, actualCard.getClient());
         assertEquals(expectedProject.getDeadline().deadline, actualCard.getDeadline());
     }
+
+    /**
+     * Asserts that {@code actualCard} displays the same values as {@code expectedCard}.
+     */
+    public static void assertCardEquals(ProjectCardHandle expectedCard, ProjectCardHandle actualCard) {
+        assertEquals(expectedCard.getId(), actualCard.getId());
+        assertEquals(expectedCard.getDeadline(), actualCard.getDeadline());
+        assertEquals(expectedCard.getClient(), actualCard.getClient());
+        assertEquals(expectedCard.getProjectName(), actualCard.getProjectName());
+    }
 }

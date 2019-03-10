@@ -48,8 +48,8 @@ public class ProjectCardHandle extends NodeHandle<Node> {
      * Returns true if this handle contains {@code project}.
      */
     public boolean equals(Project project) {
-        return getProjectName().equals(project.getProjectName())
-                && getClient().equals(project.getClient())
-                && getDeadline().equals(project.getDeadline());
+        return getProjectName().equals(project.getProjectName().projectName)
+                && getClient().equals(project.getClient().client)
+                && getDeadline().equals(project.getDeadline().deadline);
     }
 }

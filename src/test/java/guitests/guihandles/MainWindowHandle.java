@@ -13,6 +13,7 @@ public class MainWindowHandle extends StageHandle {
     private final StatusBarFooterHandle statusBarFooter;
     private final MainMenuHandle mainMenu;
     private final BrowserPanelHandle browserPanel;
+    private final SideTabPanelHandle sideTabPanel;
 
     public MainWindowHandle(Stage stage) {
         super(stage);
@@ -23,6 +24,11 @@ public class MainWindowHandle extends StageHandle {
         statusBarFooter = new StatusBarFooterHandle(getChildNode(StatusBarFooterHandle.STATUS_BAR_PLACEHOLDER));
         mainMenu = new MainMenuHandle(getChildNode(MainMenuHandle.MENU_BAR_ID));
         browserPanel = new BrowserPanelHandle(getChildNode(BrowserPanelHandle.BROWSER_ID));
+        sideTabPanel = new SideTabPanelHandle(getChildNode(SideTabPanelHandle.SIDE_TAB_ID));
+    }
+
+    public SideTabPanelHandle getSideTabPanel() {
+        return sideTabPanel;
     }
 
     public EmployeeListPanelHandle getEmployeeListPanel() {
