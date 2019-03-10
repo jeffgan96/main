@@ -52,6 +52,13 @@
         <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.4" VBox.vgrow="ALWAYS">
           <TabPane id = "tabPane" fx:id="tabPane" tabMinHeight="30.0" tabMinWidth="80.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
             <tabs>
+              <Tab closable="false" text="Project">
+                  <VBox fx:id="projectList">
+                      <StackPane fx:id = "projectListPanelPlaceholder" VBox.vgrow="ALWAYS">
+
+                      </StackPane>
+                  </VBox>
+              </Tab>
               <Tab closable="false" text="Employee">
                 <VBox fx:id="employeeList" minWidth="340" prefWidth="340" SplitPane.resizableWithParent="false">
                   <padding>
@@ -60,6 +67,7 @@
                   <StackPane fx:id="employeeListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
                 </VBox>
               </Tab>
+
             </tabs>
           </TabPane>
 
@@ -69,12 +77,7 @@
             </padding>
           </StackPane>
 
-          <VBox fx:id="ProjectList" minWidth="340" prefWidth="340" SplitPane.resizableWithParent="false">
-            <padding>
-              <Insets top="10" right="10" bottom="10" left="10" />
-            </padding>
-            <StackPane fx:id="projectListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-          </VBox>
+
 
         </SplitPane>
 
