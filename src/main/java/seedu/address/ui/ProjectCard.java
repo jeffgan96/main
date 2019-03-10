@@ -40,8 +40,8 @@ public class ProjectCard extends UiPart<Region> {
         this.project = project;
         id.setText(displayedIndex + ". ");
         name.setText(project.getProjectName().projectName);
-        client.setText("Client: " + project.getClient().client);
-        deadline.setText("Deadline: " + project.getDeadline().deadline);
+        client.setText(project.getClient().client);
+        deadline.setText(project.getDeadline().deadline);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class ProjectCard extends UiPart<Region> {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof EmployeeCard)) {
+        if (!(other instanceof ProjectCard)) {
             return false;
         }
 
