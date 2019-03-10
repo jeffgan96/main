@@ -50,7 +50,7 @@
         </StackPane>
 
         <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.4" VBox.vgrow="ALWAYS">
-          <TabPane id = "tabPane" fx:id="tabPane" tabMinHeight="30.0" tabMinWidth="80.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+          <TabPane id = "sideTabPlaceholder" fx:id="tabPane" tabMinHeight="30.0" tabMinWidth="80.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
             <tabs>
               <Tab closable="false" text="Project">
                   <VBox fx:id="projectList">
@@ -76,8 +76,6 @@
               <Insets top="10" right="10" bottom="10" left="10" />
             </padding>
           </StackPane>
-
-
 
         </SplitPane>
 
