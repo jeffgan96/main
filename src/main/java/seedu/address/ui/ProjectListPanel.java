@@ -52,8 +52,8 @@ public class ProjectListPanel extends UiPart<Region> {
         });
 
         selectedEmployee.addListener(((observable, oldValue, newValue) -> {
-            if (newValue != null) {
                 logger.info("selection changed to employees");
+            if (newValue != null) {
                 projectListView.getSelectionModel().clearSelection();
             }
         }));
