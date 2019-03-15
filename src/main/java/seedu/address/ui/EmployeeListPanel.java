@@ -12,6 +12,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.employee.Employee;
+import seedu.address.model.project.Project;
 
 /**
  * Panel containing the list of employees.
@@ -24,16 +25,16 @@ public class EmployeeListPanel extends UiPart<Region> {
     private ListView<Employee> employeeListView;
 
     public EmployeeListPanel(ObservableList<Employee> employeeList, ObservableValue<Employee> selectedEmployee,
-                             Consumer<Employee> onSelectedEmployeeChange) {
+                             Consumer<Employee> onSelectedEmployeeChange, ObservableValue<Project> selectedProject) {
         super(FXML);
         employeeListView.setItems(employeeList);
         employeeListView.setCellFactory(listView -> new EmployeeListViewCell());
         employeeListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            logger.info("Selection in employee list panel changed to : '" + newValue + "'");
+            logger.fine("Selection in employee list panel changed to : '" + newValue + "'");
             onSelectedEmployeeChange.accept(newValue);
         });
         selectedEmployee.addListener((observable, oldValue, newValue) -> {
-            logger.info("Selected employee changed to: " + newValue);
+            logger.fine("Selected employee changed to: " + newValue);
 
             // Don't modify selection if we are already selecting the selected employee,
             // otherwise we would have an infinite loop.
@@ -49,7 +50,17 @@ public class EmployeeListPanel extends UiPart<Region> {
                 employeeListView.getSelectionModel().clearAndSelect(index);
             }
         });
+
+        selectedProject.addListener(((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                logger.info("selection changed to projects");
+                employeeListView.getSelectionModel().clearSelection();
+            }
+        }));
+
     }
+
+
 
     /**
      * Custom {@code ListCell} that displays the graphics of a {@code Employee} using a {@code EmployeeCard}.

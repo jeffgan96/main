@@ -10,6 +10,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.model.employee.Employee;
 import seedu.address.model.project.Project;
 
 /**
@@ -24,16 +25,16 @@ public class ProjectListPanel extends UiPart<Region> {
 
     public ProjectListPanel(ObservableList<Project> projectList,
                             ObservableValue<Project>selectedProject,
-                            Consumer<Project> onSelectedProjectChange) {
+                            Consumer<Project> onSelectedProjectChange, ObservableValue<Employee> selectedEmployee) {
         super(FXML);
         projectListView.setItems(projectList);
         projectListView.setCellFactory(listView -> new ProjectListPanel.ProjectListViewCell());
         projectListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            logger.info("Selection in project list panel changed to : '" + newValue + "'");
+            logger.fine("Selection in project list panel changed to : '" + newValue + "'");
             onSelectedProjectChange.accept(newValue);
         });
         selectedProject.addListener((observable, oldValue, newValue) -> {
-            logger.info("Selected project changed to: " + newValue);
+            logger.fine("Selected project changed to: " + newValue);
 
             // Don't modify selection if we are already selecting the selected employee,
             // otherwise we would have an infinite loop.
@@ -49,6 +50,13 @@ public class ProjectListPanel extends UiPart<Region> {
                 projectListView.getSelectionModel().clearAndSelect(index);
             }
         });
+
+        selectedEmployee.addListener(((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                logger.info("selection changed to employees");
+                projectListView.getSelectionModel().clearSelection();
+            }
+        }));
     }
 
     /**

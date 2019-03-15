@@ -117,10 +117,10 @@ public class MainWindow extends UiPart<Stage> {
         browserPlaceholder.getChildren().add(browserPanel.getRoot());
 
         employeeListPanel = new EmployeeListPanel(logic.getFilteredEmployeeList(), logic.selectedEmployeeProperty(),
-                logic::setSelectedEmployee);
+                logic::setSelectedEmployee, logic.selectedProjectProperty());
 
         projectListPanel = new ProjectListPanel(logic.getFilteredProjectList(), logic.selectedProjectProperty(),
-                logic::setSelectedProject);
+                logic::setSelectedProject, logic.selectedEmployeeProperty());
 
         sideTabPanel = new SideTabPanel(employeeListPanel.getRoot(), projectListPanel.getRoot());
         tabPanePlaceholder.getChildren().add(sideTabPanel.getRoot());
