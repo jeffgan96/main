@@ -24,7 +24,7 @@ import seedu.address.model.employee.Email;
 import seedu.address.model.employee.Employee;
 import seedu.address.model.employee.Name;
 import seedu.address.model.employee.Phone;
-
+import seedu.address.model.project.Project;
 
 
 public class EmployeeListPanelTest extends GuiUnitTest {
@@ -34,6 +34,7 @@ public class EmployeeListPanelTest extends GuiUnitTest {
     private static final long CARD_CREATION_AND_DELETION_TIMEOUT = 2500;
 
     private final SimpleObjectProperty<Employee> selectedEmployee = new SimpleObjectProperty<>();
+    private final SimpleObjectProperty<Project> selectedProject= new SimpleObjectProperty<>();
     private EmployeeListPanelHandle employeeListPanelHandle;
 
     @Test
@@ -100,7 +101,7 @@ public class EmployeeListPanelTest extends GuiUnitTest {
      */
     private void initUi(ObservableList<Employee> backingList) {
         EmployeeListPanel employeeListPanel =
-                new EmployeeListPanel(backingList, selectedEmployee, selectedEmployee::set);
+                new EmployeeListPanel(backingList, selectedEmployee, selectedEmployee::set, selectedProject);
         uiPartRule.setUiPart(employeeListPanel);
 
         employeeListPanelHandle = new EmployeeListPanelHandle(getChildNode(employeeListPanel.getRoot(),

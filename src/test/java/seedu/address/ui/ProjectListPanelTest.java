@@ -15,6 +15,7 @@ import guitests.guihandles.ProjectListPanelHandle;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import seedu.address.model.employee.Employee;
 import seedu.address.model.project.Client;
 import seedu.address.model.project.Deadline;
 import seedu.address.model.project.Project;
@@ -27,6 +28,7 @@ public class ProjectListPanelTest extends GuiUnitTest {
     private static final long CARD_CREATION_AND_DELETION_TIMEOUT = 2500;
 
     private final SimpleObjectProperty<Project> selectedProject = new SimpleObjectProperty<>();
+    private final SimpleObjectProperty<Employee> selectedEmployee = new SimpleObjectProperty<>();
     private ProjectListPanelHandle projectListPanelHandle;
 
     @Test
@@ -92,7 +94,7 @@ public class ProjectListPanelTest extends GuiUnitTest {
      */
     private void initUi(ObservableList<Project> backingList) {
         ProjectListPanel projectListPanel =
-                new ProjectListPanel(backingList, selectedProject, selectedProject::set);
+                new ProjectListPanel(backingList, selectedProject, selectedProject::set, selectedEmployee);
         uiPartRule.setUiPart(projectListPanel);
 
         projectListPanelHandle = new ProjectListPanelHandle(getChildNode(projectListPanel.getRoot(),
