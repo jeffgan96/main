@@ -34,7 +34,7 @@ public class EmployeeListPanelTest extends GuiUnitTest {
     private static final long CARD_CREATION_AND_DELETION_TIMEOUT = 2500;
 
     private final SimpleObjectProperty<Employee> selectedEmployee = new SimpleObjectProperty<>();
-    private final SimpleObjectProperty<Project> selectedProject= new SimpleObjectProperty<>();
+    private final SimpleObjectProperty<Project> selectedProject = new SimpleObjectProperty<>();
     private EmployeeListPanelHandle employeeListPanelHandle;
 
     @Test
